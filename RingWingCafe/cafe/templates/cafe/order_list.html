@@ -1,0 +1,23 @@
+<h1>Orders</h1>
+<a href="{% url 'order_create' %}">Create Order</a>
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Actions</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>{{ order.item }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.price }}</td>
+        <td>{{ order.total }}</td>
+        <td>
+            <a href="{% url 'order_update' order.id %}">Edit</a>
+            <a href="{% url 'order_delete' order.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,32 @@
+{% extends 'cafe/base.html' %}
+{% load static %}
+{% block content %}
+<div class="menu-container">
+    <h1>Our Menu</h1>
+    <div class="menu-items">
+        <!-- Item 1 -->
+        <div class="menu-item">
+            <img src="{% static 'images/coffee.jpg' %}" alt="Coffee" class="menu-item-image">
+            <h2>Classic Coffee</h2>
+            <p>Rich and bold coffee brewed to perfection.</p>
+            <p><strong>Price:</strong> $3.50</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="menu-item">
+            <img src="{% static 'images/croissant.jpg' %}" alt="Croissant" class="menu-item-image">
+            <h2>Butter Croissant</h2>
+            <p>Flaky and buttery croissant fresh from the oven.</p>
+            <p><strong>Price:</strong> $2.50</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="menu-item">
+            <img src="{% static 'images/latte.jpg' %}" alt="Latte" class="menu-item-image">
+            <h2>Vanilla Latte</h2>
+            <p>Espresso blended with creamy vanilla and steamed milk.</p>
+            <p><strong>Price:</strong> $4.00</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

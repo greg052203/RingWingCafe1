@@ -1,0 +1,35 @@
+{% extends 'cafe/base.html' %}
+
+{% block title %}
+Orders - Ring and Wing Cafe
+{% endblock title %}
+
+{% block content %}
+<div class="orders-container">
+    <h1>Orders</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.item }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>
+                    <a href="{% url 'create_order' %}">Add New Order</a>
+                    <a href="{% url 'order_update' order.id %}">Edit</a>
+                    <a href="{% url 'order_delete' order.id %}" onclick="return confirm('Are you sure?');">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
